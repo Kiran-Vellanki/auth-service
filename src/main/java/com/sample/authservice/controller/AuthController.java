@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sample.authservice.dto.LoginRequest;
 import com.sample.authservice.dto.SignupRequest;
 import com.sample.authservice.model.Response;
-import com.sample.authservice.service.AuthServiceImpl;
+import com.sample.authservice.service.AuthService;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -24,7 +24,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AuthController {
 
-	private final AuthServiceImpl authService;
+	private final AuthService authService;
 
 	@PostMapping("/signup")
 	public ResponseEntity<?> signup(@Valid @RequestBody SignupRequest request) {
